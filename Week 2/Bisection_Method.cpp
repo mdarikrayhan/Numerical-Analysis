@@ -6,15 +6,13 @@ using namespace std;
 
 int main()
 {
-    float a,b,x, fa, fb, f, error, low, high;
-    int step = 1;
-    cout << setprecision(6) << fixed;
+    float a,b,error,x, fa, fb, fr;
 
-    cout << "Enter lower guess : ";
+    int low,high;
+    cout << "Enter Lower guess : ";
     cin >> low;
-    cout << "Enter higher guess : ";
+    cout << "Enter Higher guess : ";
     cin >> high;
-
     int min = INT32_MAX;
     for (int i = low; i <= high; i++)
     {
@@ -46,6 +44,9 @@ int main()
         cout << "Incorrect Initial Guesses." << endl;
         return 0;
     }
+    
+    int step = 1;
+    cout << setprecision(6) << fixed;
     cout << "******************************************************************" << endl;
     cout << "                         Bisection Method                         " << endl;
     cout << "******************************************************************" << endl;
@@ -58,11 +59,11 @@ int main()
     do
     {
         x = (a + b) / 2;
-        f = f(x);
+        fr = f(x);
 
         cout << step << "\t" << setw(10) << a << "\t" << setw(10) << b << "\t" << setw(10) << x << "\t" << setw(10) << f(x) << endl;
 
-        if (fa * f < 0)
+        if (fa * fr < 0)
         {
             b = x;
         }
@@ -71,10 +72,9 @@ int main()
             a = x;
         }
         step = step + 1;
-    } while (fabs(f) > error);
+    } while (fabs(fr) > error);
 
-    cout << endl<<
-         setprecision(3)<< "Root is: " << x << endl;
+    cout << "\nRoot is: " << x << endl;
 
     return 0;
 }
