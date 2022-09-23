@@ -6,9 +6,9 @@ using namespace std;
 
 int main()
 {
-    float a=0, b=0.5, x, fa, fb, f, error = 0.005;
+    float a=0, b=0.5, x, fa, fb, f, error = 0.001;
     int step = 1;
-    cout << setprecision(6) << fixed;
+    cout << setprecision(3) << fixed;
     fa = f(a);
     fb = f(b);
     if (fa * fb > 0.0)

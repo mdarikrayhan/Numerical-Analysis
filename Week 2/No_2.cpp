@@ -8,7 +8,7 @@ int main()
 {
     float a=0, b=1, x, fa, fb, f, error = 0.0005;
     int step = 1;
-    cout << setprecision(6) << fixed;
+    cout << setprecision(3) << fixed;
     fa = f(a);
     cout << "******************************************************************" << endl;
     cout << "                         Bisection Method                         " << endl;
